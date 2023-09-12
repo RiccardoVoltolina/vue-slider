@@ -12,6 +12,7 @@ il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'es
   createApp({
     data() {
       return {
+        thumbActive:'thumb , active',
         activeImage: 0,
         slides : [
             {
@@ -36,21 +37,26 @@ il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'es
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
             ],
-          
       }
     },
     methods: {
-
         next() {
+            //al click aumento di 1 l'oggetto in cui scorrere
             this.activeImage++;
+            // se l'oggetto in cui scorrere supera la lunghezza dell' array, ritorno a 0
             if (this.activeImage > this.slides.length - 1) {
                 this.activeImage = 0;
             }
             console.log(this.activeImage);
         },
-
+       
+        
+        
         prev() {
+            //al click diminuisco di 1 l'oggetto in cui scorrere
             this.activeImage--;
+            // se l'oggetto in cui scorrere è inferiore alla lunghezza dell' array, ritorno all' ultimo oggetto dell' array
+
             if (this.activeImage < 0) {
                 this.activeImage = this.slides.length - 1;
             }
